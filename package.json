@@ -17,7 +17,8 @@
     "analytics-test": "tsx src/analytics/test-analytics.ts",
     "director": "tsx src/director/orchestrator.ts",
     "cycle": "tsx src/runCycle.ts",
-    "cockpit": "tsx src/server.ts"
+    "cockpit": "tsx src/server.ts",
+    "test": "tsx --test tests/products.test.ts"
   },
   "keywords": [
     "instagram",
