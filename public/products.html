@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f5f0">
+  <title>Gestão de Produtos — Ateliê Studio</title>
+  <link rel="stylesheet" href="/ui/app.css">
+  <link rel="stylesheet" href="/ui/products.css">
+  <script defer src="/ui/products.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand-lockup" href="/" aria-label="Ateliê início">
+        <span class="brand-mark">a<span>.</span></span>
+        <span class="brand-name">atelie<span>studio</span></span>
+      </a>
+      <div class="workspace-chip">
+        <span class="workspace-dot"></span>
+        <span>WORKSPACE</span>
+        <strong>KEVIN.TECH</strong>
+        <span class="chevron">⌄</span>
+      </div>
+      <div class="nav-label">ESPAÇO DE TRABALHO</div>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a class="nav-item" href="/#inicio"><span class="nav-icon">◫</span>Visão geral</a>
+        <a class="nav-item" href="/#radar"><span class="nav-icon">⌁</span>Radar de pautas</a>
+        <a class="nav-item" href="/#conteudos"><span class="nav-icon">▤</span>Biblioteca</a>
+        <a class="nav-item" href="/#estudio"><span class="nav-icon">▷</span>Estúdio de vídeo</a>
+        <a class="nav-item active" href="/products.html"><span class="nav-icon">📦</span>Produtos</a>
+        <a class="nav-item" href="/#metricas"><span class="nav-icon">⌗</span>Métricas</a>
+        <a class="nav-item" href="/#canais"><span class="nav-icon">↗</span>Canais Postiz</a>
+        <a class="nav-item" href="/#marca"><span class="nav-icon">✳</span>Voz da marca</a>
+        <a class="nav-item" href="/#moneyprinter"><span class="nav-icon">⚡</span>MoneyPrinter Turbo</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="connection-card">
+          <span class="connection-pulse"></span>
+          <div>
+            <strong>Ambiente local</strong>
+            <small>SQLite · Dados no computador</small>
+          </div>
+        </div>
+        <div class="profile-row">
+          <img src="/assets/user/profile.svg" alt="Perfil Kevin" onerror="this.style.display='none'">
+          <div>
+            <strong id="profile-name">Kevin</strong>
+            <small id="profile-handle">@kevin.tech</small>
+          </div>
+          <button class="more-button" aria-label="Mais opções">···</button>
+        </div>
+        <div class="build-label">ATELIÊ STUDIO <span>LOCAL · 1.0</span></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="breadcrumb">
+          <span>ATELIÊ</span>
+          <b>/</b>
+          <strong>Catálogo &amp; Produtos</strong>
+        </div>
+        <div class="topbar-actions">
+          <span class="local-pill"><i></i> SQLite Local Database</span>
+          <button class="icon-button" id="refresh-products-btn" title="Atualizar dados">↻</button>
+          <button class="top-avatar" title="Kevin">K</button>
+        </div>
+      </header>
+
+      <div class="page-wrap">
+        <section class="products-header">
+          <div class="welcome-row">
+            <div>
+              <p class="eyebrow">GESTÃO DE CATÁLOGO &amp; ESTOQUE</p>
+              <h1>Produtos e Serviços<span class="title-period">.</span></h1>
+              <p class="subhead">Controle centralizado de produtos, categorias, precificação e status de estoque em tempo real.</p>
+            </div>
+            <div class="header-action-group">
+              <button class="button button-dark" id="open-create-modal-btn">
+                <span>＋</span> Novo Produto <span class="button-arrow">↗</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Métricas Rápidas de Estoque -->
+        <section class="stats-grid" aria-label="Resumo dos produtos">
+          <article class="stat-card">
+            <div class="stat-top">
+              <span>TOTAL DE PRODUTOS</span>
+              <span class="stat-icon">📦</span>
+            </div>
+            <div class="stat-value" id="stat-total-products">—</div>
+            <div class="stat-foot">Cadastrados no catálogo</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top">
+              <span>VALOR EM ESTOQUE</span>
+              <span class="stat-icon icon-blue">💰</span>
+            </div>
+            <div class="stat-value" id="stat-total-value">—</div>
+            <div class="stat-foot">Soma monetária acumulada</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top">
+              <span>ESTOQUE BAIXO / CRÍTICO</span>
+              <span class="stat-icon icon-yellow">⚠️</span>
+            </div>
+            <div class="stat-value" id="stat-low-stock">—</div>
+            <div class="stat-foot">Estoque com 5 unidades ou menos</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top">
+              <span>ESGOTADOS</span>
+              <span class="stat-icon icon-purple">⛔</span>
+            </div>
+            <div class="stat-value" id="stat-out-of-stock">—</div>
+            <div class="stat-foot">Sem unidades disponíveis</div>
+          </article>
+        </section>
+
+        <!-- Barra de Controle: Filtros, Busca e Ordenação -->
+        <section class="panel products-toolbar-panel">
+          <div class="products-toolbar">
+            <div class="search-input-wrap">
+              <span class="search-icon">🔍</span>
+              <input 
+                type="text" 
+                id="search-input" 
+                placeholder="Buscar por nome ou descrição..." 
+                autocomplete="off"
+              >
+              <button type="button" id="clear-search-btn" class="clear-input-btn" hidden title="Limpar busca">×</button>
+            </div>
+
+            <div class="filter-controls-wrap">
+              <div class="filter-group">
+                <label for="category-filter">Categoria</label>
+                <select id="category-filter">
+                  <option value="">Todas as categorias</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <label for="status-filter">Status Estoque</label>
+                <select id="status-filter">
+                  <option value="">Todos os status</option>
+                  <option value="in_stock">Em Estoque</option>
+                  <option value="low_stock">Estoque Baixo (≤ 5)</option>
+                  <option value="out_of_stock">Esgotado (0)</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <label for="sort-by">Ordenar por</label>
+                <select id="sort-by">
+                  <option value="createdAt-desc">Mais Recentes</option>
+                  <option value="createdAt-asc">Mais Antigos</option>
+                  <option value="name-asc">Nome (A - Z)</option>
+                  <option value="name-desc">Nome (Z - A)</option>
+                  <option value="price-asc">Menor Preço</option>
+                  <option value="price-desc">Maior Preço</option>
+                  <option value="stock-desc">Maior Estoque</option>
+                  <option value="stock-asc">Menor Estoque</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tabela e Listagem de Produtos -->
+        <section class="panel products-table-panel">
+          <div class="panel-head products-table-head">
+            <div>
+              <span class="section-tag"><i class="live-dot"></i> CATÁLOGO VIVO</span>
+              <h3 id="table-results-title">Lista de Produtos</h3>
+            </div>
+            <div class="table-head-actions">
+              <span class="counter-pill" id="products-counter">0 produtos</span>
+            </div>
+          </div>
+
+          <!-- Feedback de Carregamento -->
+          <div id="loading-state" class="state-container" hidden>
+            <span class="spinner"></span>
+            <p>Carregando catálogo de produtos...</p>
+          </div>
+
+          <!-- Feedback de Erro -->
+          <div id="error-state" class="state-container error-state" hidden>
+            <span class="state-icon">⚠️</span>
+            <p id="error-message">Ocorreu um erro ao carregar os dados.</p>
+            <button class="button button-outline" id="retry-fetch-btn">Tentar novamente</button>
+          </div>
+
+          <!-- Tabela de Produtos -->
+          <div class="table-wrap" id="products-table-wrap">
+            <table class="products-table">
+              <thead>
+                <tr>
+                  <th>PRODUTO &amp; DESCRIÇÃO</th>
+                  <th>CATEGORIA</th>
+                  <th>PREÇO</th>
+                  <th>ESTOQUE</th>
+                  <th>STATUS</th>
+                  <th>CADASTRADO</th>
+                  <th class="text-right">AÇÕES</th>
+                </tr>
+              </thead>
+              <tbody id="products-tbody">
+                <!-- Inserido dinamicamente via JS -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Feedback Vazio -->
+          <div id="empty-state" class="empty-state" hidden>
+            <span class="empty-glyph">📦</span>
+            <strong>Nenhum produto encontrado.</strong>
+            <span>Cadastre seu primeiro produto ou ajuste os filtros de pesquisa aplicados.</span>
+            <button class="small-button" id="empty-create-btn">Cadastrar Produto <span>→</span></button>
+          </div>
+
+          <!-- Paginação -->
+          <footer class="products-table-footer" id="table-footer">
+            <div class="footer-info" id="pagination-info">Mostrando 0 de 0 produtos</div>
+            <div class="pagination-controls" id="pagination-controls">
+              <button class="pagination-btn" id="prev-page-btn" disabled>← Anterior</button>
+              <div class="pagination-pages" id="pagination-pages"></div>
+              <button class="pagination-btn" id="next-page-btn" disabled>Próxima →</button>
+            </div>
+          </footer>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL DE CRIAÇÃO / EDIÇÃO DE PRODUTO -->
+  <dialog id="product-modal" class="content-dialog product-modal">
+    <div class="dialog-close-row">
+      <button class="dialog-close" id="modal-close-x-btn" aria-label="Fechar modal">×</button>
+    </div>
+    <div class="dialog-body">
+      <div class="dialog-heading">
+        <div>
+          <span class="section-tag" id="modal-eyebrow">NOVO ITEM</span>
+          <h2 id="modal-title">Adicionar Produto</h2>
+          <p id="modal-subtitle">Preencha os dados abaixo para cadastrar o produto no estoque local.</p>
+        </div>
+      </div>
+
+      <div id="modal-alert" class="modal-alert" hidden></div>
+
+      <form id="product-form" class="product-form" novalidate>
+        <input type="hidden" id="product-id" name="id">
+
+        <div class="form-row">
+          <div class="form-field full-width">
+            <label for="field-name">Nome do Produto <span class="required">*</span></label>
+            <input 
+              type="text" 
+              id="field-name" 
+              name="name" 
+              placeholder="Ex: Microfone Shure SM7B, Curso de Automação com IA..." 
+              required 
+              minlength="2" 
+              maxlength="150"
+            >
+            <span class="field-error" id="error-field-name"></span>
+          </div>
+        </div>
+
+        <div class="form-row form-grid-3">
+          <div class="form-field">
+            <label for="field-category">Categoria <span class="required">*</span></label>
+            <input 
+              type="text" 
+              id="field-category" 
+              name="category" 
+              list="category-suggestions" 
+              placeholder="Ex: Áudio, Software, Acessórios..." 
+              required 
+              minlength="2" 
+              maxlength="100"
+            >
+            <datalist id="category-suggestions"></datalist>
+            <span class="field-error" id="error-field-category"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="field-price">Preço (R$) <span class="required">*</span></label>
+            <input 
+              type="number" 
+              id="field-price" 
+              name="price" 
+              step="0.01" 
+              min="0" 
+              placeholder="0,00" 
+              required
+            >
+            <span class="field-error" id="error-field-price"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="field-stock">Qtd. Estoque <span class="required">*</span></label>
+            <input 
+              type="number" 
+              id="field-stock" 
+              name="stock" 
+              step="1" 
+              min="0" 
+              placeholder="0" 
+              value="0" 
+              required
+            >
+            <span class="field-error" id="error-field-stock"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field full-width">
+            <label for="field-description">Descrição Detalhada <small>(opcional)</small></label>
+            <textarea 
+              id="field-description" 
+              name="description" 
+              rows="4" 
+              maxlength="2000" 
+              placeholder="Especificações, links de fornecedores ou notas operacionais..."
+            ></textarea>
+            <span class="field-error" id="error-field-description"></span>
+          </div>
+        </div>
+
+        <div class="dialog-footer">
+          <small class="muted-note"><span class="required">*</span> Campos obrigatórios. Salvo localmente via API.</small>
+          <div class="dialog-footer-actions">
+            <button type="button" class="button button-outline" id="modal-cancel-btn">Cancelar</button>
+            <button type="submit" class="button button-dark" id="modal-submit-btn">
+              <span>Salvar Produto</span> <span class="button-arrow">↗</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- MODAL DE CONFIRMAÇÃO DE EXCLUSÃO -->
+  <dialog id="delete-modal" class="approval-dialog">
+    <div class="approval-dialog-body">
+      <div class="approval-symbol delete-symbol">🗑️</div>
+      <p class="eyebrow">CONFIRMAÇÃO DE EXCLUSÃO</p>
+      <h2>Remover Produto?</h2>
+      <p>Você está prestes a excluir o produto <strong id="delete-product-name">—</strong> do catálogo local.</p>
+      <div class="notice-card" style="margin: 14px 0;">
+        <span>ⓘ</span>
+        <p>Esta ação não pode ser desfeita. Todos os registros locais deste item serão excluídos do banco de dados SQLite.</p>
+      </div>
+      <div class="dialog-actions">
+        <button class="button button-outline" id="delete-cancel-btn">Cancelar</button>
+        <button class="button button-danger" id="delete-confirm-btn">
+          <span>Excluir Definitivamente</span>
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Stack de Notificações Toast -->
+  <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+</body>
+</html>

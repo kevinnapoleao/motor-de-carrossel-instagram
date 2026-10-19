@@ -1,0 +1,573 @@
+/* ==========================================================================
+   PRODUCTS MANAGEMENT - ESTILOS DEDICADOS (Ateliê Studio Design System)
+   ========================================================================== */
+
+/* Barra de Ações do Topo */
+.products-header .welcome-row {
+  margin-bottom: 20px;
+}
+
+.header-action-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Painel de Filtros e Busca */
+.products-toolbar-panel {
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.products-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.search-input-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  font-size: 13px;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+.search-input-wrap input {
+  width: 100%;
+  padding: 9px 34px 9px 34px;
+  border: 1px solid #e1e5da;
+  border-radius: 5px;
+  background: #fbfcf9;
+  color: var(--ink);
+  font-size: 12px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.search-input-wrap input:focus {
+  background: #fff;
+  border-color: #9aab69;
+  box-shadow: 0 0 0 3px #c9d7a32e;
+}
+
+.clear-input-btn {
+  position: absolute;
+  right: 10px;
+  border: 0;
+  background: transparent;
+  color: #949a8f;
+  font-size: 16px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.clear-input-btn:hover {
+  color: var(--ink);
+  background: #eaece4;
+}
+
+.filter-controls-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.filter-group label {
+  font: 9px var(--mono);
+  color: #727a6f;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.filter-group select {
+  padding: 7px 11px;
+  border: 1px solid #e1e5da;
+  border-radius: 5px;
+  background: #fbfcf9;
+  color: #333a30;
+  font-size: 11px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.filter-group select:focus {
+  background: #fff;
+  border-color: #9aab69;
+  box-shadow: 0 0 0 3px #c9d7a32e;
+}
+
+/* Painel da Tabela */
+.products-table-panel {
+  padding: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.products-table-head {
+  padding: 18px 22px 14px;
+  border-bottom: 1px solid #eff0ea;
+}
+
+.counter-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: #f0f2eb;
+  color: #55623f;
+  font: 10px var(--mono);
+  font-weight: 600;
+}
+
+/* Tabela Estilizada */
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.products-table th {
+  padding: 12px 20px;
+  background: #fafbf7;
+  border-bottom: 1px solid #e9ebe4;
+  color: #7b8277;
+  font: 9px var(--mono);
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+}
+
+.products-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid #eff0ea;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.products-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.products-table tr:hover td {
+  background: #fafbf7;
+}
+
+/* Colunas Específicas */
+.prod-primary {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-width: 320px;
+}
+
+.prod-name {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.prod-desc {
+  font-size: 10px;
+  color: #777e74;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.category-tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: #f2f4ec;
+  color: #4b5839;
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.prod-price {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 13px;
+  color: #1a2218;
+}
+
+.prod-stock-count {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.prod-date {
+  font-size: 10px;
+  color: #8c9287;
+  white-space: nowrap;
+}
+
+/* Badges de Status do Estoque */
+.stock-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font: 9px var(--mono);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.stock-status-badge i {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.stock-status-badge.in-stock {
+  background: #edf6ec;
+  color: #27692c;
+  border: 1px solid #c9e6c9;
+}
+.stock-status-badge.in-stock i {
+  background: #2ea037;
+}
+
+.stock-status-badge.low-stock {
+  background: #fdf6e6;
+  color: #8a6514;
+  border: 1px solid #f1ddab;
+}
+.stock-status-badge.low-stock i {
+  background: #e2a013;
+}
+
+.stock-status-badge.out-of-stock {
+  background: #fdf0ed;
+  color: #993322;
+  border: 1px solid #f3cfc7;
+}
+.stock-status-badge.out-of-stock i {
+  background: #d63c22;
+}
+
+/* Botões de Ação na Linha */
+.action-buttons-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.action-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #e2e6dc;
+  border-radius: 4px;
+  background: #fff;
+  color: #555c51;
+  font-size: 13px;
+  transition: all 0.18s ease;
+}
+
+.action-icon-btn:hover {
+  background: #f2f5ec;
+  border-color: #cbd3c2;
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.action-icon-btn.delete-action:hover {
+  background: #fdf0ed;
+  border-color: #f1cfc8;
+  color: #ba2818;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Estados de Carregamento, Erro e Vazio */
+.state-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  text-align: center;
+  gap: 12px;
+}
+
+.state-container p {
+  margin: 0;
+  color: #727a6e;
+  font-size: 12px;
+}
+
+.error-state {
+  color: #a44335;
+}
+
+.error-state .state-icon {
+  font-size: 28px;
+}
+
+.error-state p {
+  color: #a44335;
+  font-weight: 500;
+}
+
+/* Rodapé de Paginação */
+.products-table-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 22px;
+  border-top: 1px solid #eff0ea;
+  background: #fafbf7;
+  font-size: 11px;
+}
+
+.footer-info {
+  color: #7b8377;
+  font: 10px var(--mono);
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pagination-btn {
+  padding: 5px 11px;
+  border: 1px solid #dfe3d8;
+  border-radius: 4px;
+  background: #fff;
+  color: #434b3f;
+  font-size: 10px;
+  font-weight: 600;
+  transition: all 0.18s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background: #f1f4eb;
+  border-color: #cad3c1;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.pagination-pages {
+  display: flex;
+  gap: 4px;
+}
+
+.page-num-btn {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #dfe3d8;
+  border-radius: 4px;
+  background: #fff;
+  font: 10px var(--mono);
+  color: #555e51;
+  font-weight: 600;
+}
+
+.page-num-btn.active {
+  background: var(--lime);
+  border-color: #c4e941;
+  color: #1a1e16;
+}
+
+/* Estilos do Formulário no Modal */
+.product-modal {
+  max-width: 620px;
+  width: 620px;
+}
+
+.product-form {
+  display: grid;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+}
+
+.form-grid-3 {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 12px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+
+.form-field.full-width {
+  width: 100%;
+}
+
+.form-field label {
+  font: 10px var(--mono);
+  font-weight: 700;
+  color: #5d6659;
+  letter-spacing: 0.3px;
+}
+
+.required {
+  color: #c34331;
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid #dce1d4;
+  border-radius: 4px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 11px;
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.form-field textarea {
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: #9aab69;
+  box-shadow: 0 0 0 3px #c9d7a32e;
+}
+
+.form-field input.has-error,
+.form-field textarea.has-error {
+  border-color: #d15d4d;
+  background: #fffbfa;
+}
+
+.field-error {
+  display: block;
+  min-height: 14px;
+  font-size: 9px;
+  color: #b73423;
+  margin-top: 2px;
+}
+
+.modal-alert {
+  padding: 10px 14px;
+  border-radius: 5px;
+  margin-bottom: 12px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.modal-alert.error {
+  background: #fdf1ef;
+  border: 1px solid #f6cfc7;
+  color: #9c2817;
+}
+
+.muted-note {
+  color: #8c9388;
+  font-size: 9px;
+}
+
+/* Botão Perigoso (Danger) */
+.button-danger {
+  background: #b52f1e;
+  color: #fff;
+  border-color: #a02515;
+}
+
+.button-danger:hover {
+  background: #cc3927;
+  box-shadow: 0 4px 12px #b52f1e29;
+}
+
+.delete-symbol {
+  background: #fdf0ed !important;
+  color: #c93522 !important;
+}
+
+/* Responsividade */
+@media (max-width: 850px) {
+  .products-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .filter-controls-wrap {
+    justify-content: flex-start;
+  }
+  .form-grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .product-modal {
+    width: 95vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .products-table th:nth-child(2),
+  .products-table td:nth-child(2),
+  .products-table th:nth-child(6),
+  .products-table td:nth-child(6) {
+    display: none;
+  }
+  .filter-controls-wrap {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .filter-group {
+    justify-content: space-between;
+  }
+  .filter-group select {
+    flex: 1;
+  }
+}
