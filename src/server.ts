@@ -14,6 +14,7 @@ import { AnalyticsAndFeedbackEngine } from './analytics/analyticsEngine.js';
 import { VideoAutoEditor } from './video/autoEditor.js';
 import { BrandDna } from './core/types.js';
 import { MoneyPrinterEngine } from './moneyprinter/engine.js';
+import { ProductRoutes } from './products/productRoutes.js';
 
 const root = process.cwd();
 const port = Number(process.env.PORT || 3000);
@@ -24,6 +25,7 @@ const state = new StateMachineService();
 const analytics = new AnalyticsAndFeedbackEngine();
 const scorer = new TopicScorer();
 const moneyPrinter = new MoneyPrinterEngine();
+const productRoutes = new ProductRoutes();
 const platformList: SocialPlatform[] = ['instagram', 'tiktok', 'youtube', 'threads', 'linkedin'];
 
 const mime: Record<string, string> = {
@@ -140,6 +142,10 @@ async function saveLocalEnvValue(key: 'POSTIZ_API_URL' | 'POSTIZ_API_KEY', value
 async function handler(req: http.IncomingMessage, res: http.ServerResponse) {
   const url = new URL(req.url || '/', `http://${req.headers.host || 'localhost'}`);
   try {
+    if (await productRoutes.handleRequest(req, res, url)) {
+      return;
+    }
+
     if (req.method === 'GET' && url.pathname === '/api/dashboard') {
       const brand = JSON.parse(await fs.readFile(path.join(root, 'config', 'brand_dna.json'), 'utf8')) as BrandDna;
       const jobs = state.listJobs(20).map(parseJob);
