@@ -1,0 +1,50 @@
+{
+  "creator": {
+    "name": "Kevin",
+    "handle": "@kevin.tech",
+    "title": "Estrategista de IA & Automação",
+    "avatarUrl": "https://api.dicebear.com/7.x/bottts/svg?seed=KevinTech"
+  },
+  "niche": "Inteligência Artificial, Automação de Processos e Produtividade",
+  "style": {
+    "tone": "Direto ao ponto, técnico sem ser pedante, provocativo, acionável e moderno",
+    "pacing": "Frases curtas, ritmo rápido, escaneabilidade visual alta, quebras de linha frequentes",
+    "rules": [
+      "Nunca use introduções genéricas como 'no mundo acelerado de hoje' ou 'você já se perguntou'.",
+      "Vá direto para a dor ou para o dado mais impressionante nos primeiros 3 segundos.",
+      "Use analogias do mundo real para explicar conceitos técnicos complexos.",
+      "Entregue um checklist ou passo a passo prático que o leitor possa aplicar hoje.",
+      "Finalize com uma chamada para ação (CTA) objetiva focada em salvar para consultar depois ou comentar uma palavra-chave."
+    ],
+    "forbiddenWords": [
+      "mergulhar de cabeça",
+      "no cenário atual",
+      "revolucionário",
+      "game changer",
+      "divisor de águas",
+      "fique ligado",
+      "descubra agora"
+    ]
+  },
+  "visual": {
+    "dimensions": {
+      "width": 1080,
+      "height": 1350
+    },
+    "theme": "magazine",
+    "colors": {
+      "background": "#0B0F19",
+      "card": "#111827",
+      "primary": "#38BDF8",
+      "secondary": "#818CF8",
+      "text": "#F9FAFB",
+      "textMuted": "#9CA3AF",
+      "accent": "#10B981",
+      "border": "#1F2937"
+    },
+    "typography": {
+      "titleFont": "Plus Jakarta Sans, Inter, sans-serif",
+      "bodyFont": "Inter, system-ui, sans-serif"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "ai-content-engine",
+  "version": "1.0.0",
+  "description": "Autonomous AI Content & Carousel Generation Engine",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "start": "tsx src/server.ts",
+    "dev:cli": "tsx src/cli.ts",
+    "build": "tsc",
+    "generate": "tsx src/cli.ts generate",
+    "render-test": "tsx src/carousel/test-render.ts",
+    "video-test": "tsx src/video/test-video.ts",
+    "radar-test": "tsx src/radar/test-radar.ts",
+    "distribution-test": "tsx src/distribution/test-distribution.ts",
+    "postiz-test": "tsx src/distribution/test-postiz-adapter.ts",
+    "analytics-test": "tsx src/analytics/test-analytics.ts",
+    "director": "tsx src/director/orchestrator.ts",
+    "cycle": "tsx src/runCycle.ts",
+    "cockpit": "tsx src/server.ts"
+  },
+  "keywords": [
+    "instagram",
+    "carousel",
+    "ai",
+    "content-engine",
+    "gemini",
+    "playwright"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@google/genai": "^2.28.0",
+    "@imgly/background-removal-node": "^1.4.5",
+    "@xenova/transformers": "^2.17.2",
+    "better-sqlite3": "^13.0.3",
+    "dotenv": "^16.4.7",
+    "ffmpeg-static": "^5.3.0",
+    "playwright": "^1.49.1",
+    "sharp": "^0.35.5",
+    "wavefile": "^11.0.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

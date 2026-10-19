@@ -1,0 +1,55 @@
+[
+  {
+    "topic": "Como parei de perder 20 horas por semana criando conteúdo",
+    "reels": {
+      "hook": "Se você ainda passa mais de 30 minutos editando um vídeo ou montando carrossel no Canva, você está queimando dinheiro.",
+      "body": "Eu criei um sistema que pega uma pauta em alta, escreve o roteiro no meu tom de voz, gera todos os slides em alta definição e corta os silêncios do meu vídeo automaticamente. Eu só sento, falo por 60 segundos e aperto aprovar.",
+      "visualNotes": "Corte dinâmico a cada 3 segundos, zoom in rápido no hook, tela de terminal de código ao fundo.",
+      "cta": "Comente 'MOTOR' que te mando a arquitetura de graça no direct."
+    },
+    "carousel": {
+      "theme": "dark_modern",
+      "topic": "Como parei de perder 20 horas por semana criando conteúdo",
+      "slides": [
+        {
+          "type": "cover",
+          "tag": "SISTEMAS & IA",
+          "headline": "Como parei de perder 20h por semana criando conteúdo.",
+          "subtitle": "O passo a passo exato do motor autônomo que roda nos bastidores enquanto eu gravo apenas 15 minutos.",
+          "swipeText": "Arraste para o lado →"
+        },
+        {
+          "type": "content",
+          "step": "01",
+          "headline": "O erro clássico: abrir o Canva em branco",
+          "body": "90% dos criadores travam no design. Ficam 40 minutos escolhendo cor e ajustando tamanho de fonte. O design deve ser um template estático com código, não uma pintura feita do zero a cada post.",
+          "highlight": "Separe o conteúdo da apresentação visual."
+        },
+        {
+          "type": "content",
+          "step": "02",
+          "headline": "Roteiro em 4 formatos com 1 prompt",
+          "body": "Uma boa ideia nunca vira um post só. A mesma pauta vira: 1 vídeo curto, 1 carrossel de 7 slides, 1 post para o LinkedIn e 1 e-mail. Não crie 4 vezes; distribua uma vez.",
+          "highlight": "Multiplicação de formato sem diluir a mensagem."
+        },
+        {
+          "type": "cta",
+          "headline": "Quer o código desse motor?",
+          "body": "Comente 'MOTOR' aqui embaixo que eu te envio o blueprint completo de automação no seu direct.",
+          "action": "Salve este post para não perder o diagrama"
+        }
+      ]
+    },
+    "linkedin": "A maioria dos profissionais gasta 80% do tempo formatando slides e 20% pensando na estratégia.\n\nDeveria ser exatamente o oposto.\n\nNas últimas semanas, migrei toda a minha esteira de produção para um motor programático.\n\nO resultado:\n→ Zero tempo perdido no Canva ou Photoshop\n→ Carrosséis renderizados via código em 3 segundos\n→ Consistência diária sem burnout\n\nAutomação não serve para substituir o pensamento crítico. Serve para eliminar o trabalho braçal que te impede de pensar estrategicamente.\n\nQual parte da sua rotina de criação mais drena sua energia hoje?",
+    "blog": {
+      "title": "Como Parei de Perder 20 Horas por Semana com Automação de Conteúdo",
+      "metaDescription": "O passo a passo exato para desacoplar a estratégia do trabalho braçal de design usando código e IA.",
+      "markdown": "# Como Parei de Perder 20 Horas por Semana com Automação de Conteúdo\n\nAutomatizar a esteira de conteúdo não significa produzir lixo genérico. Significa eliminar a fricção entre a ideia e a distribuição.\n\n## 1. O Problema do Design Manual\nCriar posts no Canva consome tempo desnecessário com ajustes milimétricos de caixa de texto.\n\n## 2. A Solução Programática\nTemplates em HTML/CSS com renderização headless resolvem o problema em segundos."
+    },
+    "newsletter": {
+      "subject": "Edição #01: O fim do trabalho braçal no conteúdo",
+      "previewText": "Como estruturar um motor autônomo sem complicação.",
+      "bodyMarkdown": "Olá!\n\nEsta semana quero compartilhar a arquitetura que usei para clonar uma agência inteira de conteúdo usando automação e código.\n\nSe você gasta mais de 30 minutos em cada carrossel, leia o post completo no blog."
+    }
+  }
+]

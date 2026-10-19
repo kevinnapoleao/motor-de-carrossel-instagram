@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f5f0">
+  <title>Ateliê — Kevin Tech</title>
+  <link rel="stylesheet" href="/ui/app.css">
+  <script defer src="/ui/app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand-lockup" href="#inicio" aria-label="Ateliê início">
+        <span class="brand-mark">a<span>.</span></span>
+        <span class="brand-name">atelie<span>studio</span></span>
+      </a>
+      <div class="workspace-chip"><span class="workspace-dot"></span><span>WORKSPACE</span><strong>KEVIN.TECH</strong><span class="chevron">⌄</span></div>
+      <div class="nav-label">ESPAÇO DE TRABALHO</div>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <button class="nav-item active" data-page="inicio"><span class="nav-icon">◫</span>Visão geral</button>
+        <button class="nav-item" data-page="radar"><span class="nav-icon">⌁</span>Radar de pautas<span class="nav-count" id="radar-count">—</span></button>
+        <button class="nav-item" data-page="conteudos"><span class="nav-icon">▤</span>Biblioteca<span class="nav-count" id="jobs-count">0</span></button>
+        <button class="nav-item" data-page="estudio"><span class="nav-icon">▷</span>Estúdio de vídeo</button>
+        <button class="nav-item" data-page="metricas"><span class="nav-icon">⌗</span>Métricas</button>
+        <button class="nav-item" data-page="canais"><span class="nav-icon">↗</span>Canais Postiz</button>
+          <button class="nav-item" data-page="marca"><span class="nav-icon">✳</span>Voz da marca</button>
+          <button class="nav-item" data-page="moneyprinter"><span class="nav-icon">⚡</span>MoneyPrinter Turbo</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="connection-card"><span class="connection-pulse"></span><div><strong>Ambiente local</strong><small>Seus arquivos ficam no computador</small></div></div>
+        <div class="profile-row"><img src="/assets/user/profile.svg" alt="Perfil Kevin" onerror="this.style.display='none'"><div><strong id="profile-name">Kevin</strong><small id="profile-handle">@kevin.tech</small></div><button class="more-button" aria-label="Mais opções">···</button></div>
+        <div class="build-label">ATELIÊ STUDIO <span>LOCAL · 1.0</span></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="breadcrumb"><span>ATELIÊ</span><b>/</b><strong id="page-crumb">Visão geral</strong></div>
+        <div class="topbar-actions"><span class="local-pill"><i></i> Privado no dispositivo</span><button class="icon-button" id="refresh-button" title="Atualizar">↻</button><button class="top-avatar" title="Kevin">K</button></div>
+      </header>
+
+      <div class="page-wrap">
+        <section class="page active" id="page-inicio">
+          <div class="welcome-row"><div><p class="eyebrow" id="today-label">SEU ESTÚDIO DE CONTEÚDO</p><h1>Bom dia, Kevin<span class="title-period">.</span></h1><p class="subhead">Ideias com intenção. Conteúdo no seu tom. Tudo em um só lugar.</p></div><button class="button button-dark" id="start-creation"><span>＋</span> Criar conteúdo <span class="button-arrow">↗</span></button></div>
+          <section class="hero-card">
+            <div class="hero-copy"><div class="hero-kicker"><span class="live-dot"></span><span id="hero-status">SEU PRÓXIMO CONTEÚDO COMEÇA AQUI</span></div><h2>Menos operação.<br>Mais <em>ideias no mundo.</em></h2><p>Do sinal de mercado ao carrossel pronto, com você no controle em cada etapa.</p><div class="hero-actions"><button class="button button-lime" data-go="radar">Encontrar uma pauta <span>↗</span></button><button class="text-button" data-go="marca">Ajustar voz da marca <span>→</span></button></div></div>
+            <div class="hero-art"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-glow"></div><div class="poster"><div class="poster-top"><span>KEVIN.TECH</span><span>001 / IDEIAS</span></div><div class="poster-word">IDEIAS<br><i>em movimento.</i></div><div class="poster-bottom"><span>INTELIGÊNCIA ARTIFICIAL<br>& AUTOMAÇÃO</span><b>ATELIÊ<br>STUDIO</b></div><div class="poster-star">✳</div></div><div class="floating-tag tag-trend"><span>↗</span> PAUTA → PEÇA</div><div class="floating-tag tag-voice"><span>◉</span> SEU TOM, SEMPRE</div></div>
+          </section>
+          <section class="stats-grid" aria-label="Resumo do estúdio">
+            <article class="stat-card"><div class="stat-top"><span>CONTEÚDOS CRIADOS</span><span class="stat-icon">▤</span></div><div class="stat-value" id="stat-created">—</div><div class="stat-foot">Itens salvos na sua biblioteca</div></article>
+            <article class="stat-card"><div class="stat-top"><span>AGUARDANDO VOCÊ</span><span class="stat-icon icon-yellow">◷</span></div><div class="stat-value" id="stat-pending">—</div><div class="stat-foot">Aprovação humana, sempre</div></article>
+            <article class="stat-card"><div class="stat-top"><span>ALCANCE REGISTRADO</span><span class="stat-icon icon-blue">⌗</span></div><div class="stat-value" id="stat-reach">—</div><div class="stat-foot" id="stat-reach-note">Insira métricas para acompanhar</div></article>
+            <article class="stat-card"><div class="stat-top"><span>FORMATOS POR PAUTA</span><span class="stat-icon icon-purple">✳</span></div><div class="stat-value">05</div><div class="stat-foot">Reels · carrossel · LinkedIn · blog · newsletter</div></article>
+          </section>
+          <div class="section-heading"><div><p class="eyebrow">COMECE PELO QUE ESTÁ ACONTECENDO</p><h2>Pautas com potencial</h2></div><button class="link-button" data-go="radar">Abrir radar completo <span>→</span></button></div>
+          <div class="content-grid"><section class="panel trend-panel"><div class="panel-head"><div><span class="section-tag"><i class="live-dot"></i> RADAR DE PAUTAS</span><h3>O que merece sua atenção</h3></div><button class="round-arrow" data-go="radar" aria-label="Abrir radar">↗</button></div><div id="home-trends" class="trend-list"><div class="empty-loading"><span class="spinner"></span> Buscando sinais…</div></div></section>
+            <section class="panel latest-panel"><div class="panel-head"><div><span class="section-tag">SUA PRODUÇÃO</span><h3>Último conteúdo</h3></div><button class="round-arrow" data-go="conteudos" aria-label="Abrir biblioteca">↗</button></div><div id="latest-content"><div class="empty-state compact"><span class="empty-glyph">✳</span><strong>Seu próximo conteúdo começa aqui.</strong><span>Escolha uma pauta no radar e gere o pacote completo.</span><button class="small-button" data-go="radar">Explorar pautas <span>→</span></button></div></div></section>
+          </div>
+          <section class="workflow-strip"><div class="workflow-intro"><span class="workflow-icon">↗</span><div><span class="section-tag">FLUXO CRIATIVO</span><h3>Do sinal à publicação</h3></div></div><div class="workflow-step"><b>01</b><span>Radar</span><small>Pautas do seu nicho</small></div><span class="workflow-line"></span><div class="workflow-step"><b>02</b><span>Criação</span><small>Cinco formatos, um tom</small></div><span class="workflow-line"></span><div class="workflow-step"><b>03</b><span>Estúdio</span><small>Carrossel e vídeo</small></div><span class="workflow-line"></span><div class="workflow-step"><b>04</b><span>Sua aprovação</span><small>Nada sai sem seu OK</small></div></section>
+        </section>
+
+        <section class="page" id="page-radar">
+          <div class="page-heading"><div><p class="eyebrow">SINAIS DE MERCADO × SEU NICHO</p><h1>Radar de pautas<span class="title-period">.</span></h1><p class="subhead">Descubra conversas que combinam com IA, automação e produtividade.</p></div><button class="button button-dark" id="scan-trends"><span>↻</span> Atualizar radar</button></div>
+          <div class="notice-card" id="radar-notice"><span>ⓘ</span><p>As sugestões mostram a fonte e o sinal observado. A afinidade é editorial; métricas da sua conta só entram quando você as registra.</p></div>
+          <div class="radar-toolbar"><div><span class="section-tag" id="radar-source">SINAIS PÚBLICOS</span><span class="radar-updated" id="radar-updated"></span></div><div class="radar-filter"><span>Ordenado por</span><strong>afinidade editorial ↓</strong></div></div>
+          <div class="radar-layout"><div class="radar-results" id="radar-results"><div class="empty-loading"><span class="spinner"></span> Procurando sinais…</div></div><aside class="radar-aside"><div class="panel radar-explainer"><div class="aside-icon">⌁</div><span class="section-tag">COMO FUNCIONA</span><h3>Relevância sem achismo.</h3><p>Cruzamos sinais públicos recentes com seu nicho e identidade editorial. O score não é previsão de viralização.</p><div class="score-legend"><span><i class="legend-green"></i> Afinidade editorial</span><span><i class="legend-gray"></i> Atividade da fonte</span></div></div><div class="panel radar-custom"><span class="section-tag">JÁ TEM UMA IDEIA?</span><h3>Traga sua própria pauta.</h3><textarea id="custom-topic" placeholder="Ex.: O que agentes de IA realmente conseguem automatizar hoje?" maxlength="200"></textarea><button class="button button-dark button-full" id="create-custom">Gerar este conteúdo <span>↗</span></button></div></aside></div>
+        </section>
+
+        <section class="page" id="page-conteudos"><div class="page-heading"><div><p class="eyebrow">TUDO O QUE VOCÊ CRIOU</p><h1>Biblioteca<span class="title-period">.</span></h1><p class="subhead">Roteiros, carrosséis e peças organizados por pauta.</p></div><button class="button button-dark" data-go="radar">＋ Novo conteúdo</button></div><div class="library-summary" id="library-summary"></div><div class="library-grid" id="library-list"></div></section>
+
+        <section class="page" id="page-estudio"><div class="page-heading"><div><p class="eyebrow">PÓS-PRODUÇÃO LOCAL</p><h1>Estúdio de vídeo<span class="title-period">.</span></h1><p class="subhead">Envie sua gravação. O motor corta pausas e prepara um master vertical.</p></div><span class="local-pill"><i></i> Processamento no computador</span></div>
+          <div class="studio-grid"><div class="panel video-upload-panel"><div class="upload-zone" id="upload-zone"><input type="file" id="video-file" accept="video/mp4,video/quicktime,video/x-matroska,video/webm,.mp4,.mov,.mkv,.webm" hidden><div class="upload-symbol">↑</div><h3>Solte seu vídeo aqui</h3><p>ou <button class="inline-link" id="choose-video">escolha um arquivo</button> do computador</p><small>MP4, MOV, MKV ou WebM · até 300 MB</small></div><div class="upload-info" id="upload-info"><span class="upload-file-icon">▷</span><div><strong id="uploaded-name">Nenhum vídeo enviado ainda</strong><small id="uploaded-detail">Seu arquivo será processado localmente.</small></div><span id="upload-check" class="upload-check">○</span></div><div class="studio-actions"><button class="button button-outline" id="upload-video" disabled>Enviar vídeo</button><button class="button button-dark" id="process-video" disabled>Editar vídeo <span>↗</span></button></div><div id="video-notice" class="inline-notice"></div></div><div class="panel edit-specs"><span class="section-tag">MOTOR DE EDIÇÃO</span><h3>O que acontece no seu vídeo</h3><div class="spec-row"><span class="spec-symbol">✂</span><div><strong>Detecção de pausas</strong><small>Jump cuts com margens de segurança fonética.</small></div><b class="spec-ready">LOCAL</b></div><div class="spec-row"><span class="spec-symbol">↗</span><div><strong>Formato vertical</strong><small>Master 1080 × 1920 com nitidez e cor.</small></div><b class="spec-ready">LOCAL</b></div><div class="spec-row"><span class="spec-symbol">Aa</span><div><strong>Legenda sincronizada</strong><small>Transcrição da fala e queima de legendas.</small></div><b class="spec-api" id="transcript-status">API</b></div><div class="spec-row"><span class="spec-symbol">♫</span><div><strong>Áudio normalizado</strong><small>Masterização direcionada a −14 LUFS.</small></div><b class="spec-ready">LOCAL</b></div><p class="spec-footnote">A transcrição real de voz requer <code>GEMINI_API_KEY</code>. Sem ela, o estúdio não inventa legendas.</p></div></div>
+          <section class="panel video-result" id="video-result" hidden><div class="panel-head"><div><span class="section-tag">MASTER CONCLUÍDO</span><h3>Seu vídeo está pronto</h3></div><a id="video-download" class="button button-outline" download>Baixar MP4 ↗</a></div><div class="video-result-inner"><video id="video-player" controls playsinline></video><div id="video-stats" class="video-stats"></div></div></section>
+          <div class="panel studio-privacy"><span>⌂</span><p>O vídeo bruto e o arquivo final são salvos na pasta <code>inputs/raw_videos</code> e <code>output/video_reels</code>. O upload não é enviado para um serviço externo.</p></div>
+        </section>
+
+        <section class="page" id="page-metricas"><div class="page-heading"><div><p class="eyebrow">RESULTADOS REGISTRADOS</p><h1>Métricas<span class="title-period">.</span></h1><p class="subhead">Veja o que ressoa com a audiência — somente com dados reais da sua conta.</p></div><button class="button button-outline" id="make-newsletter">Montar newsletter semanal</button></div><div class="notice-card metrics-notice"><span>ⓘ</span><p>Esta versão não lê métricas diretamente das redes. Registre abaixo os resultados dos posts publicados; registros legados sem origem identificada são preservados, mas não entram nos cálculos.</p></div><div class="stats-grid metrics-stats"><article class="stat-card"><div class="stat-top"><span>VISUALIZAÇÕES</span><span class="stat-icon icon-blue">◉</span></div><div class="stat-value" id="metric-views">0</div><div class="stat-foot">Total registrado</div></article><article class="stat-card"><div class="stat-top"><span>SALVAMENTOS</span><span class="stat-icon icon-yellow">⌑</span></div><div class="stat-value" id="metric-saves">0</div><div class="stat-foot">Intenção de revisitar</div></article><article class="stat-card"><div class="stat-top"><span>COMPARTILHAMENTOS</span><span class="stat-icon">↗</span></div><div class="stat-value" id="metric-shares">0</div><div class="stat-foot">Distribuição orgânica</div></article><article class="stat-card"><div class="stat-top"><span>RETENÇÃO MÉDIA</span><span class="stat-icon icon-purple">◷</span></div><div class="stat-value" id="metric-retention">0%</div><div class="stat-foot">Média dos posts informados</div></article></div><div class="analytics-grid"><section class="panel"><div class="panel-head"><div><span class="section-tag">CONTEÚDOS POR PLATAFORMA</span><h3>Desempenho observado</h3></div></div><div class="table-wrap"><table><thead><tr><th>PLATAFORMA</th><th>REGISTROS</th><th>VISUALIZAÇÕES</th><th>SALVAMENTOS</th></tr></thead><tbody id="platform-table"><tr><td colspan="4" class="table-empty">Registre métricas para ver resultados.</td></tr></tbody></table></div></section><section class="panel metric-form-panel"><span class="section-tag">ALIMENTAR O SEU RADAR</span><h3>Registrar resultado</h3><form id="metric-form" class="metric-form"><label>Conteúdo<select name="jobId" id="metric-job" required><option value="">Escolha uma pauta</option></select></label><label>Plataforma<select name="platform"><option value="instagram">Instagram</option><option value="tiktok">TikTok</option><option value="youtube">YouTube</option><option value="threads">Threads</option><option value="linkedin">LinkedIn</option></select></label><div class="metric-input-grid"><label>Visualizações<input type="number" name="views" min="0" value="0" required></label><label>Curtidas<input type="number" name="likes" min="0" value="0" required></label><label>Salvamentos<input type="number" name="saves" min="0" value="0" required></label><label>Compartilhamentos<input type="number" name="shares" min="0" value="0" required></label><label>Comentários<input type="number" name="comments" min="0" value="0" required></label><label>Retenção (%)<input type="number" name="retentionRatePct" min="0" max="100" step="0.1" value="0" required></label></div><button class="button button-dark button-full" type="submit">Salvar métricas <span>↗</span></button></form></section></div><div id="newsletter-result" class="panel newsletter-result" hidden></div></section>
+
+        <section class="page" id="page-canais">
+          <div class="page-heading"><div><p class="eyebrow">DISTRIBUIÇÃO CONTROLADA</p><h1>Canais Postiz<span class="title-period">.</span></h1><p class="subhead">Conecte aqui os perfis que você já autorizou dentro do Postiz.</p></div><button class="button button-outline" id="refresh-postiz">Atualizar canais</button></div>
+          <div class="notice-card"><span>ⓘ</span><p>Primeiro conecte Instagram, TikTok, YouTube, Threads e/ou LinkedIn no painel do Postiz. Depois informe a chave da API aqui. Esta tela só valida acesso e lista contas; não publica nada.</p></div>
+          <div class="postiz-layout">
+            <section class="panel postiz-connect-panel"><span class="section-tag">CONEXÃO LOCAL</span><h3>Validar acesso ao Postiz</h3><p>A chave é salva apenas no arquivo <code>.env</code> deste computador, nunca devolvida à interface nem enviada pelo chat.</p>
+              <form id="postiz-connect-form" class="postiz-form"><label>URL base da API<input name="apiUrl" type="url" value="https://api.postiz.com/public/v1" required autocomplete="url"><small>Cloud: /public/v1 · Self-hosted: /api/public/v1</small></label><label>Chave da API Postiz<input name="apiKey" type="password" placeholder="Cole a chave gerada em Settings no Postiz" required autocomplete="new-password" minlength="8"><small>A chave não aparecerá novamente depois de salva.</small></label><button class="button button-dark" type="submit">Validar e salvar conexão <span>↗</span></button></form><div class="postiz-status" id="postiz-status" role="status" aria-live="polite">Ainda não conectado.</div>
+            </section>
+            <section class="panel postiz-channels-panel"><div class="panel-head"><div><span class="section-tag">CONTAS DISPONÍVEIS</span><h3>Perfis conectados no Postiz</h3></div><span class="postiz-count" id="postiz-count">0</span></div><div id="postiz-channel-list" class="postiz-channel-list"><div class="empty-state compact"><strong>Configure a chave para carregar seus canais.</strong></div></div></section>
+          </div>
+        </section>
+        <section class="page" id="page-marca"><div class="page-heading"><div><p class="eyebrow">IDENTIDADE EDITORIAL</p><h1>Voz da marca<span class="title-period">.</span></h1><p class="subhead">O contexto que orienta cada roteiro, legenda e artigo.</p></div><span class="saved-pill" id="brand-saved" hidden>✓ Salvo no computador</span></div><div class="brand-layout"><section class="panel brand-form-panel"><div class="panel-head"><div><span class="section-tag">BRAND DNA</span><h3>Kevin · @kevin.tech</h3></div><span class="brand-avatar">K</span></div><p class="brand-niche" id="brand-niche">Inteligência Artificial, Automação e Produtividade</p><form id="brand-form"><label>Tom de voz<textarea name="tone" rows="3" maxlength="240"></textarea></label><label>Ritmo e cadência<textarea name="pacing" rows="3" maxlength="240"></textarea></label><div class="brand-form-bottom"><small>Suas alterações são usadas na próxima geração e salvas localmente.</small><button type="submit" class="button button-dark">Salvar identidade <span>↗</span></button></div></form></section><aside class="panel brand-rules"><span class="section-tag">REGRAS EDITORIAIS</span><h3>Princípios que não mudam.</h3><div id="brand-rule-list"></div><div class="forbidden-box"><span>EVITAR</span><p id="forbidden-list"></p></div><div class="privacy-note"><span>⌂</span> O perfil e os arquivos desta marca ficam neste computador.</div></aside></div></section>
+
+        <!-- PÁGINA TOTALMENTE ISOLADA: MONEYPRINTER TURBO -->
+        <section class="page" id="page-moneyprinter">
+          <div class="page-heading">
+            <div>
+              <p class="eyebrow">LABORATÓRIO EXPERIMENTAL ISOLADO</p>
+              <h1>MoneyPrinter Turbo<span class="title-period">.</span></h1>
+              <p class="subhead">Gerador autônomo de vídeos curtos a partir de um tema com narração Edge-TTS e stock footage.</p>
+            </div>
+            <span class="local-pill"><i></i> Módulo 100% Isolado</span>
+          </div>
+
+          <div class="notice-card">
+            <span>ⓘ</span>
+            <p>Este módulo opera em sandbox isolada. Nenhuma geração aqui afeta a sua esteira principal de carrosséis, o radar de pautas, o estúdio de reels ou as integrações do Postiz.</p>
+          </div>
+
+          <div class="mpt-grid">
+            <section class="panel mpt-form-panel">
+              <div class="panel-head">
+                <div>
+                  <span class="section-tag">CONFIGURAÇÃO DA GERAÇÃO</span>
+                  <h3>Criar vídeo com 1 clique</h3>
+                </div>
+                <span class="mpt-badge">⚡ TURBO</span>
+              </div>
+
+              <form id="mpt-form" class="mpt-form">
+                <label>
+                  Tema ou Palavra-chave do Vídeo
+                  <input type="text" id="mpt-subject" placeholder="Ex.: O Futuro dos Agentes Autônomos de IA" required>
+                  <small>O motor sintetiza o roteiro automaticamente com base no tema.</small>
+                </label>
+
+                <label>
+                  Roteiro Customizado (Opcional)
+                  <textarea id="mpt-script" rows="3" placeholder="Deixe em branco para gerar o roteiro dinamicamente..."></textarea>
+                </label>
+
+                <div class="mpt-row">
+                  <label>
+                    Orientação do Vídeo
+                    <select id="mpt-orientation">
+                      <option value="portrait" selected>Vertical (9:16 - Reels / Shorts / TikTok)</option>
+                      <option value="landscape">Horizontal (16:9 - YouTube / Widescreen)</option>
+                    </select>
+                  </label>
+
+                  <label>
+                    Voz da Locução (Edge-TTS)
+                    <select id="mpt-voice">
+                      <option value="pt-BR-AntonioNeural" selected>pt-BR Antonio (Masculino)</option>
+                      <option value="pt-BR-FranciscaNeural">pt-BR Francisca (Feminino)</option>
+                      <option value="pt-BR-ThalitaMultilingualNeural">pt-BR Thalita (Multilingual)</option>
+                      <option value="en-US-GuyNeural">en-US Guy (Inglês Masculino)</option>
+                      <option value="en-US-JennyNeural">en-US Jenny (Inglês Feminino)</option>
+                    </select>
+                  </label>
+                </div>
+
+                <label>
+                  Chave Pexels API (Opcional para Stock Footage)
+                  <input type="password" id="mpt-pexels-key" placeholder="Insira sua chave Pexels ou deixe vazio para visual tech procedural">
+                  <small>Sem chave, o motor gera um background procedural de estúdio dinâmico.</small>
+                </label>
+
+                <button type="submit" class="button button-dark button-full" id="mpt-submit-btn">
+                  <span>⚡</span> Gerar Vídeo MoneyPrinter <span>↗</span>
+                </button>
+              </form>
+
+              <div id="mpt-status-box" class="mpt-status-box" hidden>
+                <div class="mpt-progress-bar">
+                  <div id="mpt-progress-fill" class="mpt-progress-fill"></div>
+                </div>
+                <div class="mpt-status-text">
+                  <strong id="mpt-status-label">Iniciando...</strong>
+                  <span id="mpt-status-percent">0%</span>
+                </div>
+              </div>
+            </section>
+
+            <aside class="panel mpt-preview-panel">
+              <div class="panel-head">
+                <div>
+                  <span class="section-tag">PREVIEW & PLAYER</span>
+                  <h3>Vídeo Renderizado</h3>
+                </div>
+              </div>
+
+              <div id="mpt-player-container" class="mpt-player-container">
+                <div class="empty-state compact" id="mpt-player-empty">
+                  <span class="empty-glyph">▷</span>
+                  <strong>Nenhum vídeo em execução</strong>
+                  <span>Preencha o tema ao lado e clique em Gerar Vídeo.</span>
+                </div>
+                <video id="mpt-video-player" controls playsinline hidden class="mpt-video-element"></video>
+              </div>
+
+              <div id="mpt-download-box" class="mpt-download-box" hidden>
+                <a id="mpt-download-link" class="button button-lime button-full" download>
+                  Baixar MP4 HD <span>↗</span>
+                </a>
+              </div>
+            </aside>
+          </div>
+
+          <section class="panel mpt-history-panel">
+            <div class="panel-head">
+              <div>
+                <span class="section-tag">HISTÓRICO ISOLADO</span>
+                <h3>Vídeos Gerados pelo MoneyPrinter</h3>
+              </div>
+              <button class="button button-outline" id="mpt-refresh-history">↻ Atualizar</button>
+            </div>
+            <div id="mpt-task-list" class="mpt-task-list">
+              <div class="empty-state compact">
+                <strong>Nenhum vídeo criado ainda no MoneyPrinter.</strong>
+              </div>
+            </div>
+          </section>
+        </section>
+      </div>
+    </main>
+  </div>
+  <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+  <dialog id="content-dialog" class="content-dialog"><form method="dialog" class="dialog-close-row"><button class="dialog-close" aria-label="Fechar">×</button></form><div id="dialog-content"></div></dialog>
+  <dialog id="approval-dialog" class="approval-dialog"><div class="approval-dialog-body"><div class="approval-symbol">✓</div><p class="eyebrow">ÚLTIMA CONFERÊNCIA</p><h2>Aprovar este conteúdo?</h2><p id="approval-topic"></p><div id="approval-channel-list" class="approval-channel-list"><span>Carregando canais conectados…</span></div><div id="approval-postiz-options" class="approval-postiz-options" hidden><label id="tiktok-privacy-field">Privacidade TikTok<select id="tiktok-privacy"><option value="SELF_ONLY">Somente eu</option><option value="FOLLOWER_OF_CREATOR">Meus seguidores</option><option value="MUTUAL_FOLLOW_FRIENDS">Amigos mútuos</option><option value="PUBLIC_TO_EVERYONE">Público</option></select></label><label id="youtube-visibility-field">Visibilidade YouTube<select id="youtube-visibility"><option value="unlisted">Não listado</option><option value="private">Privado</option><option value="public">Público</option></select></label><label id="youtube-kids-field">O vídeo é feito para crianças?<select id="youtube-made-for-kids"><option value="">Selecione uma opção</option><option value="no">Não</option><option value="yes">Sim</option></select></label><label class="approval-checkbox" id="tiktok-brand-content-field"><input type="checkbox" id="tiktok-brand-content"> Conteúdo de marca/parceria paga</label><label class="approval-checkbox" id="tiktok-brand-organic-field"><input type="checkbox" id="tiktok-brand-organic"> Marca própria/promovida organicamente</label><label class="approval-checkbox" id="video-ai-field"><input type="checkbox" id="video-made-with-ai"> Vídeo/mídia gerado por IA</label></div><p class="approval-fine" id="approval-fine">Os horários são janelas fixas de referência, não calculadas com o histórico da conta. Confira contas, textos, arquivos e privacidade; só o botão final envia mídia e agenda no Postiz.</p><div class="dialog-actions"><button class="button button-outline" id="approval-cancel">Voltar</button><button class="button button-dark" id="approval-confirm" disabled>Confirmar e agendar nos canais</button></div></div></dialog>
+</body>
+</html>
